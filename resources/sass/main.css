@@ -1,0 +1,66 @@
+html{
+ font-size: 16px;
+ font-family: 'Lato', sans-serif;
+}
+body{
+    background-image: url(../images/deporte.jpg);
+    background-size: 50%;
+}
+.container{
+max-width: 450px;
+height: auto;
+background-color:#359eff;
+margin: 5% auto;
+padding: 2rem;
+opacity: 0.9;
+}
+.form_top{
+width: 100%;
+text-align: center;
+padding: 2rem 0 1rem;
+border-top: solid .4rem orangered;
+margin-bottom: 1rem;
+}
+.form_top h1{
+font-weight: bold;
+font-size: 25px;
+}
+h1 span{
+color: black;
+}
+.form_reg{
+padding: 0 2rem;
+display: flex;
+flex-direction: column;
+justify-content: center;
+}
+.btn_form{
+display: flex;
+justify-content: space-around;
+margin-top: 1rem;
+}
+.input, .btn_submit, .btn_reset{
+background-color: whitesmoke;
+padding: .5rem;
+margin: .5rem 0;
+border: none;
+border-bottom: solid rgb(201, 201, 201) .2rem;
+}
+.input:focus{
+border-bottom: solid orangered .2rem;
+}
+.btn_submit, .btn_reset{
+width: 40%;
+border-bottom: none;
+background-color: #8ffff6;
+color: black;
+}
+.btn_submit:hover{
+background-color: orangered;
+}
+.btn_reset:hover{
+background-color: orangered;
+}
+.small, a{
+color: whitesmoke;
+}

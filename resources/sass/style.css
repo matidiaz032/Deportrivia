@@ -1,0 +1,26 @@
+body{
+    background-image: url(../images/imagen.jpg);
+background-size: 50%;
+}
+.container{
+    background-color:#359eff;
+    opacity: 0.9;
+    position: relative;
+    width: 70%;
+}
+.form_top{
+    text-align: center;
+    padding: 1%;
+    opacity: 1.0;
+    color: black;
+}
+.form{
+    width: 80%;
+    margin: 1%;
+    padding: 1%;
+}
+.btn_form{
+    width: 30%;
+    margin: 1%;
+    padding: 2%;
+}

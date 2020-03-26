@@ -1,0 +1,16 @@
+body{
+  background-image: url(../images/imagen.jpg);
+}
+html{
+  font-size: 16px;
+font-family: 'Lato', sans-serif;
+  }
+
+footer{
+  font-size: 20px;
+  color:black;
+}
+
+.container-fluid h1{
+  font-size: 50px;
+}

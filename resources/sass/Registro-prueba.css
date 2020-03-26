@@ -1,0 +1,48 @@
+body{
+    background-image: url(../images/imagen.jpg);
+
+}
+.container{
+    max-width: 550px;
+    height: auto;
+    background-color:#359eff;
+    margin: 5% auto;
+    padding: 2rem;
+    opacity: 0.9;
+    }
+.form_top{
+    width: 100%;
+    text-align: center;
+    padding: 2rem 0 1rem;
+    border-top: solid .4rem orangered;
+    margin-bottom: 1rem;
+    }
+    .form_top h1{
+        font-weight: bold;
+        font-size: 25px;
+        }
+        h1 span{
+        color: black;
+        }
+        .form-control:focus{
+            border-bottom: solid orangered .2rem;
+            }
+        .btn-primary{
+            width: 100%;
+        }
+.letra{
+    color: black;
+}
+.btn-primary:hover{
+background-color: orangered;
+}
+.form-row{
+justify-content: center;
+}
+.olvido{
+color: whitesmoke;
+}
+.mover{
+   width: 58%;
+   margin-left: -1%;
+}
