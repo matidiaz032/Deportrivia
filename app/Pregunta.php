@@ -6,11 +6,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class Pregunta extends Model
 {
-    public function categoria() {
+    public function categorias() {
       return $this->belongsTo(Categoria::class);
     }
 
-    public function respuesta() {
+    public function respuestas() {
       return $this->hasMany(Respuesta::class);
     }
 }

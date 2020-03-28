@@ -1,5 +1,5 @@
 <?php
-
+use App\Respuesta; // Tiene que usar al modelo para que seed funcione
 use Illuminate\Database\Seeder;
 
 class SeederRespuestas extends Seeder
@@ -11,29 +11,27 @@ class SeederRespuestas extends Seeder
      */
     public function run()
     {
-        DB::table("respuestas")->insert(
-            [
-                "id" => "1",
-                "pregunta_id" => "1",
-                "pregunta" => "10",
-                "is_correct" => "1",
-            ]);
+        Respuesta::truncate(); // Evita duplicar datos
 
-        DB::table("respuestas")->insert(    
-            [ 
-                "id" => "2",   
-                "pregunta_id" => "1",
-                "pregunta" => "30",
-                "is_correct" => "0",
-            ]); 
-        DB::table("respuestas")->insert(
-            [
-                "id" => "3",
-                "pregunta_id" => "1",
-                "pregunta" => "19",
-                "is_correct" => "0",
-            ]);
+        $categoria = new Respuesta();
+        $categoria->id = "1";
+        $categoria->pregunta_id = "1";
+        $categoria->respuesta = "10";
+        $categoria->is_correct = "1";
+        $categoria->save();
+
+        $categoria = new Respuesta();
+        $categoria->id = "2";
+        $categoria->pregunta_id = "1";
+        $categoria->respuesta = "30";
+        $categoria->is_correct = "0";
+        $categoria->save();
             
-        
+        $categoria = new Respuesta();
+        $categoria->id = "3";
+        $categoria->pregunta_id = "1";
+        $categoria->respuesta = "19";
+        $categoria->is_correct = "0";
+        $categoria->save();          
     }
 }

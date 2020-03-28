@@ -5,9 +5,15 @@
      <div class="row">
         <div class="col-md-12">
            <div id="quiz-wrapper">
-              <h1>{{ $pregunta->detalle }}</h1>
+
+            @foreach ($categorias as $categoria)                 
+            @foreach ($preguntas as $item)
+              <h3>{{$categoria->nombre}}</h3>
+              <h1>{{ $item->detalle }}</h1>
+            
+              
               {!! Form::open() !!}
-              @foreach($pregunta->respuesta->shuffle() as $respuesta)
+              @foreach($item->respuestas->shuffle() as $respuesta)
               <h3>
                   <div class="form-group">
                       <div class="radio">
@@ -19,6 +25,9 @@
                   </div>
               </h3>
               @endforeach
+              @endforeach
+              @endforeach
+              
               {{Form::submit('Mandar Respuesta')}}
               {!! Form::close() !!}
            </div>

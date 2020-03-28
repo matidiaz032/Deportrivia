@@ -17,7 +17,7 @@ class CreateRespuestasTable extends Migration
         (Blueprint $table) {
           $table->increments('id');
           $table->integer('pregunta_id')->unsigned()->index();
-          $table->string('pregunta');
+          $table->string('respuesta');
           $table->boolean('is_correct');
           $table->timestamps();
         });

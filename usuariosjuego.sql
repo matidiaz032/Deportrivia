@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 26-03-2020 a las 04:28:30
+-- Tiempo de generación: 28-03-2020 a las 00:35:31
 -- Versión del servidor: 10.1.26-MariaDB
--- Versión de PHP: 7.1.8
+-- Versión de PHP: 7.2.29
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -40,7 +40,7 @@ CREATE TABLE `categorias` (
 --
 
 INSERT INTO `categorias` (`id`, `nombre`, `created_at`, `updated_at`) VALUES
-(1, 'Futbol', NULL, NULL);
+(1, 'Futbol', '2020-03-28 01:42:17', '2020-03-28 01:42:17');
 
 -- --------------------------------------------------------
 
@@ -49,6 +49,7 @@ INSERT INTO `categorias` (`id`, `nombre`, `created_at`, `updated_at`) VALUES
 --
 
 CREATE TABLE `failed_jobs` (
+  `id` bigint(20) UNSIGNED NOT NULL,
   `connection` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `queue` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `payload` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -63,29 +64,22 @@ CREATE TABLE `failed_jobs` (
 --
 
 CREATE TABLE `jugadores` (
-  `id` int(11) NOT NULL,
-  `email` varchar(255) NOT NULL,
-  `password` varchar(200) NOT NULL,
-  `username` varchar(200) NOT NULL,
-  `ciudad` text,
-  `pais` int(200) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `id` int(10) UNSIGNED NOT NULL,
+  `username` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `pais` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `password` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Volcado de datos para la tabla `jugadores`
 --
 
-INSERT INTO `jugadores` (`id`, `email`, `password`, `username`, `ciudad`, `pais`) VALUES
-(1, 'alma@gmail.com', '$2y$10$kV3wvqKJcRTr11f9wHhYteAOLrw5W4kMV2Qq0N3oYw6mB0My5TCbu', 'alma', 'Lanus', 0),
-(2, 'uma@gmail.com', '$2y$10$hd2fNEJCzYd9itKkXiXBOOXEY6L4KtAE468jhuOyd2322ITSa/HEO', 'uma11', 'Lanus', 0),
-(3, 'usuario@digitalhouse.com', '$2y$10$DXyK85FCLTbTnR3AZDxaX.flmQekGM/dW9KxXagan6JXKPBhWLuTG', 'julian99', 'Buenos Aires', 0),
-(4, 'juan@live.com', '$2y$10$1o20QHekIRiC9WElmcbBdOCpHCPNlMRVIhkueQIwZrYJ46mkOP9m6', 'matias', 'Buenos Aires', 0),
-(6, 'alejo@gmail.com', '$2y$10$zLUDnMxLr3hzNROhpFCvN.yWFyZaaYGqX/hGw45UY2pU1QIYenEp.', 'alejo201', 'Buenos Aires', 0),
-(7, 'maty_032@hotmail.es', '$2y$10$ibrANPIVmerILGBUaDXRKuW7OQ7QbVbXFdXn.K3MJpMMzCtaT3aXe', 'matias032', 'Buenos Aires', 0),
-(8, 'm@m', '$2y$10$t7IP.e5oLmE8kRX0EyCqgOxhejIt1AO8dJNI3L1hNbn90drzmdGrO', 'm', 'Buenos Aires', 0),
-(9, 'efe@hotmail.com', '$2y$10$VqsvaWwEL9F/brNk54pZBOsj.2wTWnq5j4WFzA9vBbUlMsCNN2m6G', 'efe', 'Buenos Aires', 0),
-(10, 'matidiazee@gmail.com', '$2y$10$MNrN0NiGwh3Oi7I8ktJHlOe5fL0iTQ4KfYb4HRXnSnMVf6A9EzYc6', 'MDiaz', 'Buenos Aires', 0),
-(43, 'roman@hotmail.com', '$2y$10$OBOtXiYnu7dxPmtV19eu5O0GKBVo7UzohzR7TUYQPuba4bwMHsDsy', 'roman10', 'Rio', 0);
+INSERT INTO `jugadores` (`id`, `username`, `email`, `pais`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
+(1, 'matias032', 'matidiazee@gmail.com', '1', '$2y$10$wluYIGKoXOydOy6V.aWof.WILV69oWU7WUcDChpCX22Xk3147V/m.', NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -104,12 +98,13 @@ CREATE TABLE `migrations` (
 --
 
 INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
-(3, '2014_10_12_000000_create_users_table', 1),
-(4, '2014_10_12_100000_create_password_resets_table', 1),
-(5, '2019_08_19_000000_create_failed_jobs_table', 2),
-(6, '2020_03_16_132504_create-preguntas-table', 2),
-(7, '2020_03_16_133613_create-categorias-table', 2),
-(8, '2020_03_16_133627_create-respuestas-table', 2);
+(1, '2014_10_12_000000_create_users_table', 1),
+(2, '2014_10_12_100000_create_password_resets_table', 1),
+(3, '2019_08_19_000000_create_failed_jobs_table', 1),
+(4, '2020_03_16_132504_create-preguntas-table', 1),
+(5, '2020_03_16_133613_create-categorias-table', 1),
+(6, '2020_03_16_133627_create-respuestas-table', 1),
+(7, '2020_03_27_230727_create_jugadores_table', 2);
 
 -- --------------------------------------------------------
 
@@ -142,7 +137,7 @@ CREATE TABLE `preguntas` (
 --
 
 INSERT INTO `preguntas` (`id`, `categoria_id`, `detalle`, `created_at`, `updated_at`) VALUES
-(1, 1, '¿Que camiseta usa Messi en Barcelona?', NULL, NULL);
+(1, 1, '¿Que camiseta usa Messi en Barcelona?', '2020-03-28 01:42:17', '2020-03-28 01:42:17');
 
 -- --------------------------------------------------------
 
@@ -153,7 +148,7 @@ INSERT INTO `preguntas` (`id`, `categoria_id`, `detalle`, `created_at`, `updated
 CREATE TABLE `respuestas` (
   `id` int(10) UNSIGNED NOT NULL,
   `pregunta_id` int(10) UNSIGNED NOT NULL,
-  `pregunta` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `respuesta` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `is_correct` tinyint(1) NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
@@ -163,10 +158,10 @@ CREATE TABLE `respuestas` (
 -- Volcado de datos para la tabla `respuestas`
 --
 
-INSERT INTO `respuestas` (`id`, `pregunta_id`, `pregunta`, `is_correct`, `created_at`, `updated_at`) VALUES
-(1, 1, '10', 1, NULL, NULL),
-(2, 1, '30', 0, NULL, NULL),
-(3, 1, '19', 0, NULL, NULL);
+INSERT INTO `respuestas` (`id`, `pregunta_id`, `respuesta`, `is_correct`, `created_at`, `updated_at`) VALUES
+(1, 1, '10', 1, '2020-03-28 01:42:17', '2020-03-28 01:42:17'),
+(2, 1, '30', 0, '2020-03-28 01:42:17', '2020-03-28 01:42:17'),
+(3, 1, '19', 0, '2020-03-28 01:42:17', '2020-03-28 01:42:17');
 
 --
 -- Índices para tablas volcadas
@@ -179,13 +174,17 @@ ALTER TABLE `categorias`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indices de la tabla `failed_jobs`
+--
+ALTER TABLE `failed_jobs`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indices de la tabla `jugadores`
 --
 ALTER TABLE `jugadores`
   ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `email` (`email`),
-  ADD UNIQUE KEY `password` (`password`),
-  ADD UNIQUE KEY `username` (`username`);
+  ADD UNIQUE KEY `jugadores_email_unique` (`email`);
 
 --
 -- Indices de la tabla `migrations`
@@ -223,15 +222,20 @@ ALTER TABLE `respuestas`
 ALTER TABLE `categorias`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
+-- AUTO_INCREMENT de la tabla `failed_jobs`
+--
+ALTER TABLE `failed_jobs`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+--
 -- AUTO_INCREMENT de la tabla `jugadores`
 --
 ALTER TABLE `jugadores`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT de la tabla `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 --
 -- AUTO_INCREMENT de la tabla `preguntas`
 --

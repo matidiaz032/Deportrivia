@@ -1,24 +1,22 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Categoria;
+use App\Pregunta;
+use App\Respuesta;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
 
 Route::get('/', function () {
     return view('welcome');
 });
+
 Route::get('/jugar', function () {
-    return view('juego');
+    $categorias = Categoria::all();
+    $preguntas = Pregunta::all();
+    $respuestas = Respuesta::all();
+    return view('juego', compact('categorias', 'preguntas', 'respuestas')); 
 });
+
 
 Auth::routes();
 
