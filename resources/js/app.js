@@ -30,3 +30,49 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
 const app = new Vue({
     el: '#app',
 });
+
+    var miFormulario = document.querySelector('.formulario');
+
+    var campoUsername = miFormulario.querySelector('.username');
+
+    var campoEmail = miFormulario.querySelector('.email');
+    campoEmail.onblur = function() {
+        if (!emailRegex.test(this.value)) {
+            alert('El campo email tiene un formato incorrecto');
+        }
+    }
+    var emailRegex = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i;
+
+    miFormulario.querySelector('.pais');
+
+    var campoPass = miFormulario.querySelector('.password');
+    var campoConfPass = miFormulario.querySelector('.password-confirm');
+
+    miFormulario.onsubmit = function() {
+        if (campoUsername.value == '') {
+            alert('El campo Nombre de Usuario es obligatorio');
+            event.preventDefault();
+        } else if (campoEmail.value == '') {
+            alert('El campo email es obligatorio');
+            event.preventDefault();
+        } else if (campoPass.value == '') {
+            alert('El campo contraseña es obligatorio');
+            event.preventDefault();
+        } else if (campoConfPass.value !== campoPass.value) {
+            alert('Las contraseñas no coinciden');
+            event.preventDefault();
+        }    
+    }
+
+    var container = document.getElementById("contenedor");
+    var botonEnviar = document.getElementById("boton");
+    console.log(botonEnviar);
+    
+    /* fetch('http://country.io/names.json')
+    .then(function (respuesta) {
+        return respuesta,json();
+    })
+    .then(function (datos) {
+        console.log(datos);
+    }) */
+

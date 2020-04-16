@@ -12,26 +12,51 @@ class SeederRespuestas extends Seeder
     public function run()
     {
         Respuesta::truncate(); // Evita duplicar datos
+    
+        //Pregunta 1
 
-        $categoria = new Respuesta();
-        $categoria->id = "1";
-        $categoria->pregunta_id = "1";
-        $categoria->respuesta = "10";
-        $categoria->is_correct = "1";
-        $categoria->save();
+        $respuestas = new Respuesta();
+        $respuestas->id = "1";
+        $respuestas->pregunta_id = "1";
+        $respuestas->respuesta = "10";
+        $respuestas->is_correct = "1";
+        $respuestas->save();
 
-        $categoria = new Respuesta();
-        $categoria->id = "2";
-        $categoria->pregunta_id = "1";
-        $categoria->respuesta = "30";
-        $categoria->is_correct = "0";
-        $categoria->save();
-            
-        $categoria = new Respuesta();
-        $categoria->id = "3";
-        $categoria->pregunta_id = "1";
-        $categoria->respuesta = "19";
-        $categoria->is_correct = "0";
-        $categoria->save();          
+        $respuestas = new Respuesta();
+        $respuestas->id = "2";
+        $respuestas->pregunta_id = "1";
+        $respuestas->respuesta = "30";
+        $respuestas->is_correct = "0";
+        $respuestas->save();
+        
+        $respuestas = new Respuesta();
+        $respuestas->id = "3";
+        $respuestas->pregunta_id = "1";
+        $respuestas->respuesta = "19";
+        $respuestas->is_correct = "0";
+        $respuestas->save(); 
+    
+        //respuestas 2  
+
+        $respuestas = new Respuesta();
+        $respuestas->id = "4";
+        $respuestas->pregunta_id = "2";
+        $respuestas->respuesta = "Juan Roman Riquelme";
+        $respuestas->is_correct = "0";
+        $respuestas->save();
+
+        $respuestas = new Respuesta();
+        $respuestas->id = "5";
+        $respuestas->pregunta_id = "2";
+        $respuestas->respuesta = "Diego Armando Maradona";
+        $respuestas->is_correct = "0";
+        $respuestas->save();
+
+        $respuestas = new Respuesta();
+        $respuestas->id = "6";
+        $respuestas->pregunta_id = "2";
+        $respuestas->respuesta = "Martin Palermo";
+        $respuestas->is_correct = "1";
+        $respuestas->save();
     }
 }

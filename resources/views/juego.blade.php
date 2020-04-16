@@ -1,35 +1,40 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+<div id="contenedor" class="container">
      <div class="row">
         <div class="col-md-12">
            <div id="quiz-wrapper">
-
-            @foreach ($categorias as $categoria)                 
-            @foreach ($preguntas as $item)
+              <div class="categoria">
+                 @foreach ($categorias as $categoria)
               <h3>{{$categoria->nombre}}</h3>
+              </div>
+              @endforeach
+            <form action="{{route('respuesta.usuario')}}" method="post">
+              @foreach ($preguntas as $item)
               <h1>{{ $item->detalle }}</h1>
-            
-              
-              {!! Form::open() !!}
-              @foreach($item->respuestas->shuffle() as $respuesta)
-              <h3>
+   
+               @csrf
+               @foreach($item->respuestas as $respuesta)
+               <h3>
                   <div class="form-group">
-                      <div class="radio">
-                          
-                        {{Form::radio('result', $respuesta->is_correct)}}
+                     <div class="radio">
+                     <input type="radio" name="{{$respuesta->pregunta_id}}" id="{{$respuesta->is_correct}}" value="{{$respuesta->id}}">
+                        <label for="respuestas">{{$respuesta->respuesta}}</label>
+                     </div>
+                 </div>
+               </h3>
+               @endforeach
 
-                        {{Form::label('respuesta', $respuesta->respuesta)}}
-                      </div>
-                  </div>
-              </h3>
-              @endforeach
-              @endforeach
-              @endforeach
-              
-              {{Form::submit('Mandar Respuesta')}}
-              {!! Form::close() !!}
+               @if ($response == 1)
+                   <div class="alert">
+                      <h2>Respuesta Correcta</h2>
+                   </div>
+               @endif    
+               @endforeach
+               
+            <button type="submit" id="boton" class="boton btn btn-primary">Enviar Respuesta</button> 
+         </form>
            </div>
         </div> 
      </div>

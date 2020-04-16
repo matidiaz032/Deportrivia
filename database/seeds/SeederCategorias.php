@@ -13,9 +13,9 @@ class SeederCategorias extends Seeder
     {
         Categoria::truncate(); // Evita duplicar datos
 
-        $categoria = new Categoria();
-        $categoria->id = "1";
-        $categoria->nombre = "Futbol";
-        $categoria->save();
+        $categorias = new Categoria();
+        $categorias->id = "1";
+        $categorias->nombre = "Futbol";
+        $categorias->save();
     }
 }

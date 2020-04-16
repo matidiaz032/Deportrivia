@@ -10,12 +10,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/jugar', function () {
-    $categorias = Categoria::all();
-    $preguntas = Pregunta::all();
-    $respuestas = Respuesta::all();
-    return view('juego', compact('categorias', 'preguntas', 'respuestas')); 
-});
+Route::get('/jugar','RespuestasController@juego');
+route::post('/jugar','RespuestasController@juego')->name('respuesta.usuario');
+
+
 
 
 Auth::routes();
