@@ -10,8 +10,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/jugar','RespuestasController@juego');
-route::post('/jugar','RespuestasController@juego')->name('respuesta.usuario');
+Route::get('/iniciar','RespuestasController@index')->name('iniciar');
+Route::get('/jugar','RespuestasController@juego')->name('jugar');
+route::post('/jugar','RespuestasController@respuestasUsuario')->name('respuesta.usuario');
 
 
 

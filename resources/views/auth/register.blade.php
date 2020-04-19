@@ -43,22 +43,21 @@
                         <div class="form-group row">
                             <label for="password" class="col-md-4 col-form-label text-md-right">Pais</label>
 
-                            <div class="col-md-6">
-                                <select id="pais" type="pais" class="pais form-control @error('pais') is-invalid @enderror" name="pais" autocomplete="new-pais">
-                                  @foreach(App\User::USUARIO_PAISES as $valor=>$pais)
-                                  <option value="{{$valor}}">{{$pais}}</option>
-                                  @endforeach
-                                </select>
-
-                                @error('pais')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-
-                            </select>
+                            <div class="col-md-6" id="contenido">
+                                <select id="pais" name="pais">
+                                    <option value=""></option>
+                                </select>  
                         </div>
                       </div>
+                      <div class="form-group row">
+                        <label for="password" class="col-md-4 col-form-label text-md-right">Provincia</label>
+
+                        <div class="col-md-6" id="contenido">
+                            <select id="provincias">
+                                <option value=""></option>
+                            </select>  
+                    </div>
+                  </div>
                         <div class="form-group row">
                             <label for="password" class="col-md-4 col-form-label text-md-right">Contraseña</label>
 
@@ -104,3 +103,5 @@
     </div>
 </div>
 @endsection
+
+<script src="{{ asset('/js/registro.js')}}"></script>

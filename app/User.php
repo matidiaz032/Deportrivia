@@ -9,10 +9,10 @@ use Illuminate\Notifications\Notifiable;
 class User extends Authenticatable
 {
   const USUARIO_PAISES = [
-    "1" => "Argentina",
-    "2" => "Brasil",
-    "3" => "Colombia",
-    "4" => "Francia",
+    "Ar"=>"Argentina",
+    "Br" => "Brasil",
+    "Co" => "Colombia",
+    "Fr" => "Francia",
   ];
     protected $table='jugadores';
     public $timestamps = false;

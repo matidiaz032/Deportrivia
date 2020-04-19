@@ -48,7 +48,7 @@
 
 
                     <div class="container col-md-4 text-center lead bg-primary " style="opacity:0.9;"><br>
-                      <button class="btn btn-danger p-4 border border-dark"  name="button"><strong><a style="color:whitesmoke" href="/jugar">JUGAR</a></button><br><br>
+                    <button class="btn btn-danger p-4 border border-dark"  name="button"><strong><a style="color:whitesmoke" href="{{route('iniciar')}}">JUGAR</a></button><br><br>
                       <button class="btn btn-danger p-4 border border-dark" name="button"><strong>OPCIONES</button><br><br>
                       <button class="btn btn-danger p-4 border border-dark rounded-top" name="button"><strong>CREDITOS</button><br><br>
                       </div><br><br><br>
