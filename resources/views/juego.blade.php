@@ -6,34 +6,26 @@
         <div class="col-md-12">
            <div id="quiz-wrapper">
               <div class="categoria">
-                 @foreach ($categorias as $categoria)
-              <h3>{{$categoria->nombre}}</h3>
+              <h3>{{$categorias->nombre}}</h3>
               </div>
-              @endforeach
-            <form id="formulario" name="formulario" action="{{route('respuesta.usuario')}}" method="post">
-              @foreach ($preguntas as $item)
-              <h1>{{ $item->detalle }}</h1>
-   
+            <form id="formulario" name="formulario" action="{{route('puntuacion')}}" method="post">
                @csrf
-               @foreach($item->respuestas as $respuesta)
+               <input type="hidden" name="categorias" value="{{$categorias->id}}">
+              @foreach ($categorias->preguntas as $item)
+              <h1>{{ $item->detalle }}</h1> 
+               @foreach($item->respuestas->shuffle() as $respuesta)
                <h3>
                   <div class="form-group">
                      <div class="radio">
-                     <input type="radio" name="{{$respuesta->pregunta_id}}" id="{{$respuesta->id}}" value="{{$respuesta->is_correct}}">
+                     <input type="radio" name="{{$respuesta->pregunta_id}}" value="{{$respuesta->is_correct}}">
                         <label for="respuestas">{{$respuesta->respuesta}}</label>
                      </div>
                  </div>
                </h3>
-               @endforeach
-
-               {{-- @if ($response == 1)
-                   <div class="alert">
-                      <h2>Respuesta Correcta</h2>
-                   </div>
-               @endif --}}    
+               @endforeach    
                @endforeach
                
-            <button type="submit" id="boton" class="boton btn btn-primary">Enviar Respuesta</button> 
+            <button type="submit" name="submit" id="boton" class="boton btn btn-primary">Enviar Respuesta</button> 
          </form>
            </div>
         </div> 

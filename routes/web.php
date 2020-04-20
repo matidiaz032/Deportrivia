@@ -11,8 +11,8 @@ Route::get('/', function () {
 });
 
 Route::get('/iniciar','RespuestasController@index')->name('iniciar');
-Route::get('/jugar','RespuestasController@juego')->name('jugar');
-route::post('/jugar','RespuestasController@respuestasUsuario')->name('respuesta.usuario');
+Route::get('/jugar/{id}','RespuestasController@juego')->name('jugar');
+route::post('/puntuacion','RespuestasController@respuestasUsuario')->name('puntuacion');
 
 
 

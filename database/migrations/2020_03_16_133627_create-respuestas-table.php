@@ -30,6 +30,6 @@ class CreateRespuestasTable extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('respuestas');
     }
 }
