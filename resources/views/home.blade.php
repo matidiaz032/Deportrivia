@@ -54,18 +54,6 @@
                       </div><br><br><br>
                       </div>
 
-
-
-                      <ul class="nav nav-pills nav-fill text-center">
-
-                      <li class="nav-item text-center">
-                      <button class="btn btn-primary p-0" name="button" style="font-family: 'Magra', sans-serif;"><strong><a class="nav-link text-white" href="Ingresar.php">¿Tenes cuenta? Ingresa</button></a>
-                     <br><br>
-                      <button class="btn btn-primary p-0" name="button" style="font-family: 'Magra', sans-serif;"><strong><a class="nav-link text-white" href="Registro.php">¿No tenes cuenta? Registrate</button></a>
-                      </li>
-
-                    </ul>
-
                     <br><br>
                       <footer>
                        <div class="text-center bg-dark" style="opacity:0.8; color:white;"> Copyrigth JUEGO. Todos los derechos son reservados.</div>
