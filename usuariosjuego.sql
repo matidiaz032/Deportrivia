@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 28-03-2020 a las 00:35:31
+-- Tiempo de generación: 20-04-2020 a las 03:37:48
 -- Versión del servidor: 10.1.26-MariaDB
 -- Versión de PHP: 7.2.29
 
@@ -40,7 +40,7 @@ CREATE TABLE `categorias` (
 --
 
 INSERT INTO `categorias` (`id`, `nombre`, `created_at`, `updated_at`) VALUES
-(1, 'Futbol', '2020-03-28 01:42:17', '2020-03-28 01:42:17');
+(1, 'Futbol', '2020-04-16 01:04:18', '2020-04-16 01:04:18');
 
 -- --------------------------------------------------------
 
@@ -79,7 +79,13 @@ CREATE TABLE `jugadores` (
 --
 
 INSERT INTO `jugadores` (`id`, `username`, `email`, `pais`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'matias032', 'matidiazee@gmail.com', '1', '$2y$10$wluYIGKoXOydOy6V.aWof.WILV69oWU7WUcDChpCX22Xk3147V/m.', NULL, NULL, NULL);
+(1, 'matias032', 'matidiazee@gmail.com', '1', '$2y$10$wluYIGKoXOydOy6V.aWof.WILV69oWU7WUcDChpCX22Xk3147V/m.', NULL, NULL, NULL),
+(2, 'matidiaz032', 'maty_032@hotmail.es', '1', '$2y$10$HmkHCRV5TomHQCVgQPxQQ.gfkO4ytZUWZ7unxrybUtli3D.9j5Uiq', 'xJDe0KKiPwlNHykVTQMLyAjDl3FvneweDty9VsnofFbaMYwhGix8wYI9LRMp', NULL, NULL),
+(3, 'matas', 'matias@gmail.com', '1', '$2y$10$HiBNvO97qqOZ7qRdBxvQeOO1KWUFMZJrNbb1c7rdrLjdCV0RwUuqi', NULL, NULL, NULL),
+(4, 'roman10', 'roman@hotmail.com', 'Argentina', '$2y$10$CxCnMemL.ztsNKLNsTuwhupGo2ojBEYUMSjhE30zVhj2hG0elDtC2', NULL, NULL, NULL),
+(5, 'julian', 'juli@hotmail.com', '2', '$2y$10$DRH/MfXHyf8MT5b2Y2i1E.UtodinbcAvdL3aQFWE8NlI6hwbUAiI2', NULL, NULL, NULL),
+(6, 'udhskd', 'mati@gmail.com', '1', '$2y$10$cB7dsBvOSAnTzRGSfCa71.VrHom/DtXoK2ED8LiQYtxCgEeo/gG6a', NULL, NULL, NULL),
+(7, 'masadoi', 'mat@gmail.com', '13', '$2y$10$vGseZyua0QDAdN15q1W1/u5IhOhpDVzRVibV0cCD9wZhspQODinjm', NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -137,7 +143,30 @@ CREATE TABLE `preguntas` (
 --
 
 INSERT INTO `preguntas` (`id`, `categoria_id`, `detalle`, `created_at`, `updated_at`) VALUES
-(1, 1, '¿Que camiseta usa Messi en Barcelona?', '2020-03-28 01:42:17', '2020-03-28 01:42:17');
+(1, 1, '¿Que camiseta usa Messi en Barcelona?', '2020-04-16 01:04:18', '2020-04-16 01:04:18'),
+(2, 1, '¿Quien es el maximo goleador de la historia de Boca Juniors?', '2020-04-16 01:04:18', '2020-04-16 01:04:18');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `puntuacion`
+--
+
+CREATE TABLE `puntuacion` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `categoria_id` bigint(20) UNSIGNED NOT NULL,
+  `jugadores_id` bigint(20) UNSIGNED NOT NULL,
+  `puntuacion` int(11) NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Volcado de datos para la tabla `puntuacion`
+--
+
+INSERT INTO `puntuacion` (`id`, `categoria_id`, `jugadores_id`, `puntuacion`, `created_at`, `updated_at`) VALUES
+(1, 1, 1, 2, '2020-04-20 04:32:43', '2020-04-20 04:32:43');
 
 -- --------------------------------------------------------
 
@@ -159,9 +188,12 @@ CREATE TABLE `respuestas` (
 --
 
 INSERT INTO `respuestas` (`id`, `pregunta_id`, `respuesta`, `is_correct`, `created_at`, `updated_at`) VALUES
-(1, 1, '10', 1, '2020-03-28 01:42:17', '2020-03-28 01:42:17'),
-(2, 1, '30', 0, '2020-03-28 01:42:17', '2020-03-28 01:42:17'),
-(3, 1, '19', 0, '2020-03-28 01:42:17', '2020-03-28 01:42:17');
+(1, 1, '10', 1, '2020-04-16 01:04:18', '2020-04-16 01:04:18'),
+(2, 1, '30', 0, '2020-04-16 01:04:18', '2020-04-16 01:04:18'),
+(3, 1, '19', 0, '2020-04-16 01:04:18', '2020-04-16 01:04:18'),
+(4, 2, 'Juan Roman Riquelme', 0, '2020-04-16 01:04:18', '2020-04-16 01:04:18'),
+(5, 2, 'Diego Armando Maradona', 0, '2020-04-16 01:04:18', '2020-04-16 01:04:18'),
+(6, 2, 'Martin Palermo', 1, '2020-04-16 01:04:18', '2020-04-16 01:04:18');
 
 --
 -- Índices para tablas volcadas
@@ -206,6 +238,12 @@ ALTER TABLE `preguntas`
   ADD KEY `preguntas_categoria_id_index` (`categoria_id`);
 
 --
+-- Indices de la tabla `puntuacion`
+--
+ALTER TABLE `puntuacion`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indices de la tabla `respuestas`
 --
 ALTER TABLE `respuestas`
@@ -230,7 +268,7 @@ ALTER TABLE `failed_jobs`
 -- AUTO_INCREMENT de la tabla `jugadores`
 --
 ALTER TABLE `jugadores`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 --
 -- AUTO_INCREMENT de la tabla `migrations`
 --
@@ -240,12 +278,17 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT de la tabla `preguntas`
 --
 ALTER TABLE `preguntas`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+--
+-- AUTO_INCREMENT de la tabla `puntuacion`
+--
+ALTER TABLE `puntuacion`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT de la tabla `respuestas`
 --
 ALTER TABLE `respuestas`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;COMMIT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
