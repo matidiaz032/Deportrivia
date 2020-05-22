@@ -49800,6 +49800,122 @@ Vue.component('example-component', __webpack_require__(/*! ./components/ExampleC
 var app = new Vue({
   el: '#app'
 });
+var tema = document.getElementById('tema');
+var cuerpo = document.getElementById('body');
+var theme = document.getElementById('result');
+storagetheme = localStorage.getItem("storagetheme");
+
+if (storagetheme == 'oscuro') {
+  result.innerHTML += 'oscuro';
+  $(cuerpo).addClass("black");
+} else {
+  result.innerHTML += 'claro';
+}
+
+$(tema).click(function () {
+  $(cuerpo).toggleClass("black");
+  revisartema();
+});
+
+function revisartema() {
+  storagetheme = localStorage.getItem("storagetheme");
+
+  if (storagetheme == 'oscuro') {
+    localStorage.setItem("storagetheme", "claro");
+    result.innerHTML = 'Cambio a claro';
+    return false;
+  }
+
+  if (storagetheme == 'claro') {
+    localStorage.setItem("storagetheme", "oscuro");
+  }
+
+  if (storagetheme == null) {
+    localStorage.setItem("storagetheme", "oscuro");
+  }
+
+  result.innerHTML = 'Cambio a oscuro';
+}
+
+$(document).ready(function () {
+  var imgItems = $('.slider li').length; // Numero de Slides
+
+  var imgPos = 1; // Agregando paginacion --
+
+  for (i = 1; i <= imgItems; i++) {
+    $('.pagination').append('<li><span class="fa fa-circle"></span></li>');
+  } //------------------------
+
+
+  $('.slider li').hide(); // Ocultanos todos los slides
+
+  $('.slider li:first').show(); // Mostramos el primer slide
+
+  $('.pagination li:first').css({
+    'color': '#CD6E2E'
+  }); // Damos estilos al primer item de la paginacion
+  // Ejecutamos todas las funciones
+
+  $('.pagination li').click(pagination);
+  $('.right span').click(nextSlider);
+  $('.left span').click(prevSlider);
+  setInterval(function () {
+    nextSlider();
+  }, 1000); // FUNCIONES =========================================================
+
+  function pagination() {
+    var paginationPos = $(this).index() + 1; // Posicion de la paginacion seleccionada
+
+    $('.slider li').hide(); // Ocultamos todos los slides
+
+    $('.slider li:nth-child(' + paginationPos + ')').fadeIn(); // Mostramos el Slide seleccionado
+    // Dandole estilos a la paginacion seleccionada
+
+    $('.pagination li').css({
+      'color': '#858585'
+    });
+    $(this).css({
+      'color': '#CD6E2E'
+    });
+    imgPos = paginationPos;
+  }
+
+  function nextSlider() {
+    if (imgPos >= imgItems) {
+      imgPos = 1;
+    } else {
+      imgPos++;
+    }
+
+    $('.pagination li').css({
+      'color': '#858585'
+    });
+    $('.pagination li:nth-child(' + imgPos + ')').css({
+      'color': '#CD6E2E'
+    });
+    $('.slider li').hide(); // Ocultamos todos los slides
+
+    $('.slider li:nth-child(' + imgPos + ')').fadeIn(); // Mostramos el Slide seleccionado
+  }
+
+  function prevSlider() {
+    if (imgPos <= 1) {
+      imgPos = imgItems;
+    } else {
+      imgPos--;
+    }
+
+    $('.pagination li').css({
+      'color': '#858585'
+    });
+    $('.pagination li:nth-child(' + imgPos + ')').css({
+      'color': '#CD6E2E'
+    });
+    $('.slider li').hide(); // Ocultamos todos los slides
+
+    $('.slider li:nth-child(' + imgPos + ')').fadeIn(); // Mostramos el Slide seleccionado
+  }
+});
 
 /***/ }),
 

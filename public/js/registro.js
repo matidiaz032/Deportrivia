@@ -63,7 +63,7 @@ selectPaises.onchange = function(e){
         	for( var provincia in options.contenido){
                 	option += "<option value=" + options.contenido[provincia] + ">" + provincia + "</option>";
         	}
-        	selectProvincias.innerHTML = option; 
+            selectProvincias.innerHTML = option; 
 		}
 		};
 		xmlhttp.open("GET", "http://pilote.techo.org/?do=api.getRegiones?idPais=1", true);

@@ -30,14 +30,15 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
 const app = new Vue({
     el: '#app',
 });
+
 var tema = document.getElementById('tema');
 var cuerpo = document.getElementById('body');
 var theme = document.getElementById('result');
 storagetheme = localStorage.getItem("storagetheme");
 
-if(storagetheme == 'oscuro'){
+if(cuerpo == 'oscuro'){
 result.innerHTML += 'oscuro';
-$(cuerpo).addClass( "black" );
+cuerpo.addClass( "black" );
 }else{result.innerHTML += 'claro'}
 
 $(tema).click(function() {
@@ -47,17 +48,16 @@ $(tema).click(function() {
 
 
 function revisartema(){
-storagetheme = localStorage.getItem("storagetheme");
-if(storagetheme == 'oscuro'){
-    localStorage.setItem("storagetheme", "claro");
+if(cuerpo == 'oscuro'){
+    cuerpo.setItem("body", "claro");
     result.innerHTML = 'Cambio a claro';
     return false;
 }
-if(storagetheme == 'claro'){
-    localStorage.setItem("storagetheme", "oscuro");
+if(cuerpo == 'claro'){
+    cuerpo.setItem("body", "oscuro");
 }
-if(storagetheme == null){
-    localStorage.setItem("storagetheme", "oscuro");
+if(cuerpo == null){
+    cuerpo.setItem("body", "oscuro");
 }
     result.innerHTML = 'Cambio a oscuro';
 
@@ -128,4 +128,3 @@ $(document).ready(function(){
 	}
 
 });
-

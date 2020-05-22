@@ -1,10 +1,11 @@
 body{
     background-image: url(../images/imagen.jpg);
 background-size: 50%;
-transition:.40s; background: #EEEEEE; color: black}
-
-.black{background-image:url(../images/oscuro.jpg); color:black;}
-
+transition:.40s; background: #EEEEEE;
+}
+.black{
+    background-image: url(/images/oscuro.jpg);
+}
 button{margin: 5px; border: 0px; padding: 5px; cursor: pointer;}
 
 .container{
@@ -30,7 +31,7 @@ button{margin: 5px; border: 0px; padding: 5px; cursor: pointer;}
     padding: 2%;
 }
 
-.*{
+*{
 	margin: 0;
 	padding: 0;
 	-webkit-box-sizing: border-box;

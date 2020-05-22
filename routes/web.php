@@ -7,7 +7,7 @@ use App\Respuesta;
 
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 });
 
 Route::get('/iniciar','RespuestasController@index')->name('iniciar');

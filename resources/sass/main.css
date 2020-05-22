@@ -6,6 +6,9 @@ body{
     background-image: url(../images/deporte.jpg);
     background-size: 50%;
 }
+.black{
+    background-image: url(../images/fondo.jpg);
+}
 .container{
 max-width: 450px;
 height: auto;

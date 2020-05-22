@@ -44,7 +44,7 @@
                             <label for="password" class="col-md-4 col-form-label text-md-right">Pais</label>
 
                             <div class="col-md-6" id="contenido">
-                                <select id="pais" name="pais">
+                                <select class="form-control" id="pais" name="pais">
                                     <option value=""></option>
                                 </select>  
                         </div>
@@ -52,8 +52,8 @@
                       <div class="form-group row">
                         <label for="password" class="col-md-4 col-form-label text-md-right">Provincia</label>
 
-                        <div class="col-md-6" id="contenido">
-                            <select id="provincias">
+                        <div class="col-md-6" id="">
+                            <select class="form-control" id="provincias">
                                 <option value=""></option>
                             </select>  
                     </div>

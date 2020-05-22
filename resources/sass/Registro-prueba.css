@@ -2,6 +2,9 @@ body{
     background-image: url(../images/imagen.jpg);
 
 }
+.black{
+    background-image: url(../images/fondo.jpg);
+}
 .container{
     max-width: 550px;
     height: auto;
