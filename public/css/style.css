@@ -1,10 +1,9 @@
 body{
     background-image: url(../images/imagen.jpg);
 background-size: 50%;
-transition:.40s; background: #EEEEEE;
 }
 .black{
-    background-image: url(/images/oscuro.jpg);
+    background-image: url(../images/oscuro.jpg);
 }
 button{margin: 5px; border: 0px; padding: 5px; cursor: pointer;}
 
