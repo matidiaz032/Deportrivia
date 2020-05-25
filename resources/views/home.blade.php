@@ -5,7 +5,7 @@
   <body>
     <div class="modal-dialog text-center container">
       <div class="col-sm-12 text-center">
-          <h1>
+          <h1 class="titulo">
             <strong>
               Deportrivia
             </strong>
@@ -36,9 +36,11 @@
       </div>
 
       <div class="container col-sm-2 text-center" style="opacity:0.9;">
-        <button class="btn btn-danger p-4" type="button">
-          <a href="/iniciar">JUGAR</a>
-        </button>
+        <a href="/iniciar">
+          <button class="btn btn-danger p-4" type="button">
+            JUGAR
+          </button>
+        </a>
       </div>
 
       <footer>

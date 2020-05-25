@@ -1,9 +1,13 @@
 body{
     background-image: url(../images/imagen.jpg);
-background-size: 50%;
+background-size: 40%;
 }
 .black{
-    background-image: url(../images/oscuro.jpg);
+	background-image: url(../images/dark.png);
+	background-size: 25%;
+}
+.titulo{
+	font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 button{margin: 5px; border: 0px; padding: 5px; cursor: pointer;}
 
