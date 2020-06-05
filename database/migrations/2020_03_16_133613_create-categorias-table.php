@@ -17,6 +17,8 @@ class CreateCategoriasTable extends Migration
       (Blueprint $table) {
         $table->increments('id');
         $table->string('nombre');
+        $table->string('descripcion');
+        $table->binary('imagen');
         $table->timestamps();
       });
     }

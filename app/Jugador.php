@@ -8,12 +8,9 @@ use Illuminate\Notifications\Notifiable;
 
 class User extends Authenticatable
 {
-  const USUARIO_PAISES = [
-    "Ar"=>"Argentina",
-    "Br" => "Brasil",
-    "Co" => "Colombia",
-    "Fr" => "Francia",
-  ];
+  public function puntuacion(){
+    return $this->hasMany(Puntuacion::class);//Puede tener muchas.
+}
     protected $table='jugadores';
     public $timestamps = false;
     use Notifiable;
@@ -24,7 +21,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-       'email', 'password', 'username', 'pais',
+       'email','username', 'pais','provincia','avatar'
     ];
 
     /**
@@ -33,7 +30,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $hidden = [
-        'password', 'remember_token',
+        'password', 'password_confirmation', 'remember_token',
     ];
 
     /**
@@ -44,8 +41,4 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
-
-    public function puntuacion(){
-      return $this->hasMany(Puntuacion::class);
-  }
 }

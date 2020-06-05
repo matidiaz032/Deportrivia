@@ -16,12 +16,8 @@
                @foreach($item->respuestas->shuffle() as $respuesta)
                <h3>
                   <div class="form-group">
-                     <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                        <label class="btn btn-info btn-lg active">
-                           <input type="radio" name="{{$respuesta->pregunta_id}}" value="{{$respuesta->is_correct}}">
-                           {{$respuesta->respuesta}}
-                        </label>
-                      </div>
+                     <input type="radio" name="{{$respuesta->pregunta_id}}" value="{{$respuesta->is_correct}}">
+                     {{$respuesta->respuesta}}
                  </div>
                </h3>
                @endforeach    

@@ -10,7 +10,7 @@
               {{-- <form id='register' method='post' enctype="multipart/form-data"> --}}
 
                 <div class="card-body">
-                    <form class="formulario" id='register' method="POST" action="{{ route('register') }}">
+                    <form class="formulario" id='register' method="POST" action="{{ route('register') }}" enctype="multipart/form-data">
                         @csrf
 
                         <div class="form-group row">
@@ -41,21 +41,33 @@
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label for="password" class="col-md-4 col-form-label text-md-right">Pais</label>
+                            <label for="pais" class="col-md-4 col-form-label text-md-right">Pais</label>
 
                             <div class="col-md-6" id="contenido">
-                                <select class="form-control" id="pais" name="pais">
+                                <select class="form-control" id="pais" name="pais" value="{{ old('pais') }}">
                                     <option value=""></option>
-                                </select>  
+                                </select>
+                                
+                                @error('pais')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
                         </div>
                       </div>
                       <div class="form-group row">
-                        <label for="password" class="col-md-4 col-form-label text-md-right">Provincia</label>
+                        <label for="provincia" class="col-md-4 col-form-label text-md-right">Provincia</label>
 
                         <div class="col-md-6" id="">
-                            <select class="form-control" id="provincias">
+                            <select class="form-control" id="provincias" name="provincia" value="{{ old('provincia') }}">
                                 <option value=""></option>
-                            </select>  
+                            </select> 
+                            
+                            @error('provincia')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
                     </div>
                   </div>
                         <div class="form-group row">
@@ -77,19 +89,42 @@
 
                             <div class="col-md-6">
                                 <input id="password-confirm" type="password" class="password-confirm form-control" name="password_confirmation" autocomplete="new-password">
+                            
+                                @error('password-confirm')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                                @enderror
+
                             </div>
                         </div>
 
-                        <!-- <div class="form-group">
-                             <label for="avatar">Foto de Perfil: </label>
-                        <input id="avatar" type="file" name="avatar">
-                        <div class="form-group"><br>
-                          <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="invalidCheck2">
-                            <label class="form-check-label" for="invalidCheck2">
+                        <div class="form-group row">
+                            <label for="avatar" class="col-md-4 col-form-label text-md-right">Foto de Perfil: </label>
+
+                            <div class="col-md-6">
+                                <label class="txt custom-file-label" for="customFileLang"></label>
+                                <input type="file" name="avatar" class="txt custom-file-input" id="customFileLang" lang="es" value="{{ old('avatar') }}">
+                            
+                                @error('avatar')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                                @enderror
+
+                            </div>
+                        </div> 
+
+                        <div class="form-group row">    
+                            <label class="col-md-8 form-check-label text-md-right" for="invalidCheck2">
                               Acepta los terminos y condiciones.
                             </label>
-                          </div> -->
+
+                            <div class="col-md-2">
+                                <input class="form-check-input" type="checkbox" value="" id="invalidCheck2">
+                            </div>
+                        </div>
+                        
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-primary">

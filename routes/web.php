@@ -10,7 +10,7 @@ Route::get('/', function () {
     return view('home');
 });
 
-Route::get('/iniciar','RespuestasController@index')->name('iniciar');
+Route::get('/iniciar','RespuestasController@categorias')->name('iniciar');
 Route::get('/jugar/{id}','RespuestasController@juego')->name('jugar');
 route::post('/puntuacion','RespuestasController@respuestasUsuario')->name('puntuacion');
 

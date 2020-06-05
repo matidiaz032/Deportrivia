@@ -18,7 +18,10 @@ class CreateJugadoresTable extends Migration
             $table->string('username');
             $table->string('email')->unique();
             $table->string('pais');
+            $table->string('provincia');
+            $table->binary('avatar');
             $table->string('password');
+            $table->string('password_confirmation');
             $table->rememberToken();
             $table->timestamps();
         });

@@ -78,7 +78,7 @@
                             </div>
                         </div>
 
-                        <!-- <div class="form-group">
+                        <div class="form-group">
                              <label for="avatar">Foto de Perfil: </label>
                         <input id="avatar" type="file" name="avatar">
                         <div class="form-group"><br>
@@ -87,7 +87,7 @@
                             <label class="form-check-label" for="invalidCheck2">
                               Acepta los terminos y condiciones.
                             </label>
-                          </div> -->
+                          </div>
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-primary">

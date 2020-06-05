@@ -14,7 +14,7 @@ use Illuminate\Http\Request;
 class RespuestasController extends Controller
 {
 
-   public function index(Request $request) {
+   public function categorias(Request $request) {
        $categorias = Categoria::all();
        return view('inicio',[
            'categorias' => $categorias
