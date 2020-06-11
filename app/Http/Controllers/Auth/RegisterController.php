@@ -53,7 +53,7 @@ class RegisterController extends Controller
             'username' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:jugadores'],
             'pais' => ['string'],
-            'provincia' => ['string'],
+            'provincia' => ['bail','string'],
             'avatar' => ['file'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
             'password_confirmation' => ['required', 'string'],
@@ -68,17 +68,18 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        $ruta = $data->file('avatar')->store('public');
-        $nombreArchivo = basename($ruta);
 
         return User::create([
             'username' => $data['username'],
             'email' => $data['email'],
             'pais' => $data['pais'],
             'provincia' => $data['provincia'],
-            'avatar' => $nombreArchivo,
+            'avatar' => $data['avatar'],
             'password' => Hash::make($data['password']),
             'password_confirmation' => Hash::make($data['password_confirmation']),
         ]);
+
+        /* $ruta = $data->file('avatar')->store('public');
+        $nombreArchivo = basename($ruta); */
     }
 }

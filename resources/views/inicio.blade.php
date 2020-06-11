@@ -7,14 +7,7 @@
         <li class="">
           <div class="card-img">
             <a href="{{route('jugar',['id' => $categoria->id])}}" class="btn btn-primary">{{$categoria->nombre}}
-              <img class="card-img" src="../images/categorias/futbol2.jpg" alt="{{$categoria->nombre}}">
-            </a>
-          </div>
-        </li>
-        <li class="">
-          <div class="card-img">
-            <a href="{{route('jugar',['id' => $categoria->id])}}" class="btn btn-primary">{{$categoria->nombre}}
-              <img class="card-img" src="../images/categorias/basquet.jpg" alt="{{$categoria->nombre}}">
+            <img class="card-img" src="{{$categoria->imagen}}" alt="{{$categoria->nombre}}">
             </a>
           </div>
         </li>
