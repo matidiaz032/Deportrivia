@@ -11,5 +11,5 @@ class Categoria extends Model
     }
     public function puntuacion(){
       return $this->hasMany(Puntuacion::class);
-  }
+    }
 }
