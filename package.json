@@ -1,27 +1,16 @@
 {
     "private": true,
+    "type": "module",
     "scripts": {
-        "dev": "npm run development",
-        "development": "cross-env NODE_ENV=development webpack --progress --config=node_modules/laravel-mix/setup/webpack.config.js",
-        "watch": "npm run development -- --watch",
-        "watch-poll": "npm run watch -- --watch-poll",
-        "hot": "cross-env NODE_ENV=development webpack serve --inline --hot --config=node_modules/laravel-mix/setup/webpack.config.js",
-        "prod": "npm run production",
-        "production": "cross-env NODE_ENV=production webpack --no-progress --config=node_modules/laravel-mix/setup/webpack.config.js"
+        "dev": "vite",
+        "build": "vite build",
+        "preview": "vite preview"
     },
     "devDependencies": {
-        "axios": "^0.27.2",
-        "bootstrap": "^4.6.1",
-        "cross-env": "^7.0.3",
-        "laravel-mix": "^6.0.49",
-        "lodash": "^4.17.21",
-        "popper.js": "^1.16.1",
-        "resolve-url-loader": "^5.0.0",
-        "sass": "^1.32.8",
-        "sass-loader": "^12.1.0"
-    },
-    "dependencies": {
-        "build": "^0.1.4",
-        "hard-source-webpack-plugin": "^0.13.1"
+        "axios": "^1.15.0",
+        "bootstrap": "^4.6.2",
+        "laravel-vite-plugin": "^0.8.1",
+        "sass": "^1.99.0",
+        "vite": "^4.5.3"
     }
 }
